@@ -1,0 +1,52 @@
+tags:
+  - event
+summary: Get event details
+parameters:
+  - in: path
+    name: event_id
+    required: true
+responses:
+  200:
+    description: Success
+    schema:
+      type: object
+      properties:
+        id:
+          type: number
+        title:
+          type: string
+        category:
+          type: string
+          enum:
+            - pets
+            - beauty
+            - coffee
+            - sports
+            - outside
+            - beer_and_wine
+            - reading
+            - others
+        description:
+          type: string
+        time_start:
+          type: string
+          example: 10/12/2010 07:21:42
+        time_end:
+          type: string
+          example: 10/12/2010 08:21:42
+        sonsor_id:
+          type: number
+        event_address:
+          type: string
+          example: 225 Terry Ave, 165
+        sponsor_id:
+          type: number
+        status:
+          type: string
+          enum:
+            - starting soon
+            - finished
+            - opening now
+
+  403:
+    description: Unauthorized

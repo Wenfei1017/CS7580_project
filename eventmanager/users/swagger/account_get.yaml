@@ -1,0 +1,22 @@
+tags:
+  - user
+summary: Get user account info
+responses:
+  200:
+    description: Success
+    schema:
+      type: object
+      properties:
+        id:
+          type: number
+        username:
+          type: string
+          example: happyfive
+        role:
+          type: string
+          example: Sponsor
+        email:
+          type: string
+          example: happyfive@gmail.com
+  403:
+    description: Unauthorized

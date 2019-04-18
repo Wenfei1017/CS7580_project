@@ -1,0 +1,24 @@
+tags:
+  - user
+summary: Update user account
+parameters:
+  - in: body
+    name: user body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        username:
+          type: string
+          example: happyfive
+        password:
+          type: string
+          example: password
+        email:
+          type: string
+          example: happyfive@gmail.com
+responses:
+  200:
+    description: Success
+  403:
+    description: Unauthorized

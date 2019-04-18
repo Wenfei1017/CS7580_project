@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search</legend>
+                <div class="form-group">
+                    {{ form.search_by_title.label(class="form-control-label") }}
+                    {{ form.search_by_title(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.search_by_time_start.label(class="form-control-label") }}
+                    {% if form.search_by_time_start.errors %}
+                        {{ form.search_by_time_start(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.search_by_time_start.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.search_by_time_start(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.search_by_time_end.label(class="form-control-label") }}
+                    {% if form.search_by_time_end.errors %}
+                        {{ form.search_by_time_end(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.search_by_time_end.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.search_by_time_end(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.search_by_loc.label(class="form-control-label") }}
+                    {{ form.search_by_loc(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

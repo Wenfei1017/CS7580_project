@@ -1,0 +1,29 @@
+tags:
+  - user
+summary: Create a new user
+parameters:
+  - in: body
+    name: user body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        username:
+          type: string
+          example: happyfive
+        password:
+          type: string
+          example: password
+        email:
+          type: string
+          example: happyfive@gmail.com
+        role:
+          type: string
+          enum:
+            - Sponsor
+            - User
+responses:
+  201:
+    description: Success
+  400:
+    description: Bad Request

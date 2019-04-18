@@ -1,0 +1,40 @@
+tags:
+  - event
+summary: Retrive all events
+description: Retrive all events in eventmanager
+responses:
+  200:
+    description: success
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: number
+          title:
+            type: string
+          description:
+            type: string
+            example: this is an event about pets, people who love pets are welcomed
+          time_start:
+            type: string
+            example: May 3rd, 2pm
+          time_end:
+            type: string
+            example: May 3rd, 3pm
+          event_address:
+            type: string
+            example: 975 John street, 201
+          category:
+            type: string
+          sponsor_id:
+            type: number
+          status:
+          type: string
+          enum:
+            - starting soon
+            - finished
+            - opening now
+
+

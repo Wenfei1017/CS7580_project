@@ -1,0 +1,19 @@
+tags:
+  - registration
+summary: Delete a registration
+description: Unregister an event
+parameters:
+  - in: body
+    name: registration body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        event_id:
+          type: integer
+          example: 1
+responses:
+  204:
+    description: Success
+  403:
+    description: Unauthorized

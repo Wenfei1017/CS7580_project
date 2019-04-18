@@ -1,0 +1,14 @@
+tags:
+  - event
+summary: Delete event
+description: Delete event
+parameters:
+  - in: path
+    name: event_id
+    required: true
+    type : number
+responses:
+  200:
+    description: Success
+  403:
+    description: Unauthorized

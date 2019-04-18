@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% for regi in events.items %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">Create Time: {{ regi.event.time_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <h2><a class="article-title" href="{{ url_for('events.get_event_ui', event_id=regi.event.id) }}">{{ regi.event.title }}</a></h2>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,33 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+v = {editable = true,version = "*"}
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+flask-wtf = "*"
+requests = "*"
+flask-bcrypt = "*"
+flask-login = "*"
+flask-mail = "*"
+pillow = "*"
+flasgger = "*"
+flask-restful = "*"
+flask-restplus = "*"
+gunicorn = "*"
+flask-heroku = "*"
+psycopg2 = "*"
+flask-migrate = "*"
+flask-script = "*"
+flask-caching = "*"
+pylibmc = "*"
+pytest = "*"
+coverage = "*"
+
+[requires]
+python_version = "3.7"

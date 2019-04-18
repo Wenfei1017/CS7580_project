@@ -1,0 +1,21 @@
+tags:
+  - user
+summary: login in as a user or sponsor
+parameters:
+  - in: body
+    name: user body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        username:
+          type: string
+          example: happyfive
+        password:
+          type: string
+          example: password
+responses:
+  200:
+    description: Success
+  400:
+    description: Bad Request

@@ -1,0 +1,39 @@
+tags:
+  - event
+summary: Create a new event
+parameters:
+  - in: body
+    name: event body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        time_start:
+          type: string
+          example: 10/12/2020 16:21:42
+        time_end:
+          type: string
+          example: 10/12/2020 17:21:42
+        event_address:
+          type: string
+          example: 401 Terry Ave, 105
+        category:
+          type: sring
+          enum:
+            - pets
+            - beauty
+            - coffee
+            - sports
+            - outside
+            - beer_and_wine
+            - reading
+            - others
+responses:
+  200:
+    description: Success
+  403:
+    description: Unauthorized

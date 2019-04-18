@@ -1,0 +1,44 @@
+tags:
+  - event
+summary: Retrive all events in particular category
+description: Retrive all relavent events in eventmanager
+parameters:
+  - in: path
+    name: category
+    required: true
+    type : string
+responses:
+  200:
+    description: success
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            example: happyfive
+          time_start:
+            type: string
+            example: 10/12/2020 16:21:42
+          time_end:
+            type: string
+            example: 10/12/2020 17:21:42
+          category:
+            type: string
+            enum:
+              - pets
+              - beauty
+              - coffee
+              - sports
+              - outside
+              - beer_and_wine
+              - reading
+              - others
+            example: others
+          status:
+            type: string
+            enum:
+              - starting soon
+              - finished
+              - opening now

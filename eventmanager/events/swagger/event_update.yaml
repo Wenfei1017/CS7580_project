@@ -1,0 +1,46 @@
+tags:
+  - event
+summary: Update event
+parameters:
+  - in: path
+    name: event_id
+    type: number
+    required: true
+  - in: body
+    name: event paramter body
+    required: true
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+          example: happyfive
+        description:
+          type: string
+          example: password
+        event_address:
+          type: string
+          example: 225 Terry Ave
+        time_start:
+          type: string
+          example: 10/12/2020 17:21:42
+        time_end:
+          type: string
+          example: 10/12/2020 18:21:42
+        category:
+          type: string
+          enum:
+            - pets
+            - beauty
+            - coffee
+            - sports
+            - outside
+            - beer_and_wine
+            - reading
+            - others
+          example: others
+responses:
+  200:
+    description: Success
+  403:
+    description: Unauthorized

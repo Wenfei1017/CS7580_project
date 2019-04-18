@@ -1,0 +1,38 @@
+tags:
+  - review
+summary: Get review by id
+parameters:
+  - in: path
+    name: event_id
+    schema:
+      type: integer
+  - in: path
+    name: user_id
+    schema:
+      type: integer
+responses:
+  200:
+    description: Success
+    schema:
+      type: object
+      properties:
+        user_id:
+          type: integer
+          example: 1
+        event_id:
+          type: integer
+          example: 1
+        registration_time:
+          type: string
+          example: '2019-03-09 08:55:16.045274'
+        review_time:
+          type: string
+          example: '2020-11-22 20:05:20'
+        review_content:
+          type: string
+          example: 'Great event'
+        review_rating:
+          type: string
+          example: '1'
+  400:
+    description: Bad Request

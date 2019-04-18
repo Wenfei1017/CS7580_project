@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for regi in nearevents %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">Create Time: {{ regi.time_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <h2><a class="article-title" href="{{ url_for('events.get_event_ui', event_id=regi.id) }}">{{ regi.title }}</a></h2>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}

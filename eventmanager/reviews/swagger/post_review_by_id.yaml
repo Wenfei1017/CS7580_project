@@ -1,0 +1,53 @@
+tags:
+  - review
+summary: Create a review
+parameters:
+  - in: path
+    name: event_id
+    schema:
+      type: integer
+  - in: path
+    name: user_id
+    schema:
+      type: integer
+  - in: body
+    name: review parameter body
+    schema:
+      type: object
+      properties:
+        review_time:
+          type: string
+          example: '11/22/2020 20:05:20'
+        review_rating:
+          type: integer
+          enum: [1, 2, 3, 4, 5]
+          example: 1
+        review_content:
+          type: string
+          example: 'Great event'
+responses:
+  200:
+    description: Success
+    schema:
+      type: object
+      properties:
+        user_id:
+          type: integer
+          example: 1
+        event_id:
+          type: integer
+          example: 1
+        registration_time:
+          type: string
+          example: '2019-03-09 08:55:16.045274'
+        review_time:
+          type: string
+          example: '2020-11-22 20:05:20'
+        review_content:
+          type: string
+          example: 'Great event'
+        review_rating:
+          type: string
+          example: '1'
+  403:
+    description: Unauthorized

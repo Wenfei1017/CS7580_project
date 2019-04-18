@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{#<a class="btn" href="{{ url_for('events.search_events_ui') }}">Search</a>#}
+
+{% for event in events.items %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+
+{#            <small class="text-muted">Sponsored By {{ event.sponsor_id }}</small>#}
+            <small class="text-muted">Posed On {{ event.time_posted.strftime('%Y-%m-%d') }}</small>
+
+        </div>
+        <h2><a class="article-title" href="{{ url_for('events.get_event_ui', event_id=event.id) }}">{{ event.title }}</a></h2>
+        <p class="article-content">{{ event.description }}</p>
+        <p class="article-content">{{ event.event_address }}</p>
+        <p class="article-content">time start: {{ event.time_start.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+        <p class="article-content">time end: {{ event.time_end.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+
+{#        {% if not current_user.is_anonymous and current_user.role.value == "User" %}#}
+{##}
+{#            {% for r in registrations.items %}#}
+{#            {% if r.event_id == event.id %}#}
+{#            <input class="btn btn-success" type="submit" value="You Are In">#}
+{#            {% endif %}#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
+
+
+

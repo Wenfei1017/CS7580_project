@@ -1,0 +1,17 @@
+tags:
+  - review
+summary: Delete a review
+parameters:
+  - in: path
+    name: event_id
+    schema:
+      type: integer
+  - in: path
+    name: user_id
+    schema:
+      type: integer
+responses:
+  200:
+    description: Success
+  403:
+    description: Unauthorized

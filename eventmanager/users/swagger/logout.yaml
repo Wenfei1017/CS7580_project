@@ -1,0 +1,7 @@
+tags:
+  - user
+summary: Log out
+description: Log out current user.
+responses:
+  200:
+    description: Success

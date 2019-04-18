@@ -1,0 +1,23 @@
+tags:
+  - registration
+summary: Create a new registration
+description: Register a event
+parameters:
+  - in: body
+    name: register body parameter
+    required: true
+    schema:
+      type: object
+      properties:
+        event_id:
+          type: integer
+          example: 1
+responses:
+  201:
+    description: Success
+  400:
+    description: Bad Request
+  403:
+    description: Unauthorized
+  404:
+    description: Not Found
